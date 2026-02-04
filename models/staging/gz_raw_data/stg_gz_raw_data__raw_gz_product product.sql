@@ -1,17 +1,4 @@
-with 
-
-source as (
-
-    select * from {{ source('gz_raw_data', 'raw_gz_product product') }}
-
-),
-
-renamed as (
-
-    select
-
-    from source
-
-)
-
-select * from renamed
+select 
+    products_id,
+    CAST (purchSE_PRICE as float64) as purchase_price,
+from {{ source('gz_raw_data', 'raw_gz_product product') }}
