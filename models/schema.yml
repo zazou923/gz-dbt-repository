@@ -34,10 +34,8 @@ sources:
         - name: facebook
           identifier: raw_gz_facebook
 
-      
-
 models:
-  - name: sales
+  - name: stg_data__sales
     tests:
       - unique:
           column_name: "(products_id||'-'||orders_id)"

@@ -1,11 +1,11 @@
 SELECT *
  FROM {{ref('stg_data__adwords')}}
- UNION ALL
+UNION ALL
  SELECT *
  FROM {{ ref('stg_data__criteo')}}
- UNION ALL 
+UNION ALL 
  SELECT *
  FROM {{ ref('stg_data__facebook')}}
- UNION ALL 
+UNION ALL 
  SELECT *
  FROM {{ ref('stg_data__bing') }}
