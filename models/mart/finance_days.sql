@@ -1,3 +1,5 @@
+{{config (materialized='table')}}
+
 SELECT
    date_date,
    COUNT(orders_id) AS tot_number_of_transactions,
@@ -10,3 +12,6 @@ SELECT
    COUNT(products_id) as qty_product_sold,
 FROM {{ ref('int_orders_operational') }}
    GROUP BY date_date
+
+
+
