@@ -15,8 +15,7 @@ sources:
               description: primary key
               tests:
               - unique
-              - not_null
-            
+              - not_null    
         - name: ship
           identifier: raw_gz_ship
           description : ship of Greenweez
@@ -26,6 +25,16 @@ sources:
               tests:
               - unique
               - not_null
+        - name: adwords
+          identifier: raw_gz_adwords
+        - name: bing
+          identifier: raw_gz_bing
+        - name: criteo
+          identifier: raw_gz_criteo
+        - name: facebook
+          identifier: raw_gz_facebook
+
+      
 
 models:
   - name: sales
