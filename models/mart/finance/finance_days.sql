@@ -1,13 +1,14 @@
 SELECT
    date_date,
-   COUNT(orders_id) AS tot_number_of_transactions,
-   SUM(revenue) AS tot_revenue,
-   AVG(revenue) AS avg_basket,
-   SUM(operational_margin) as operational_margin,
-   SUM(purchase_cost) as purchase_cost,
-   SUM(shipping_fee+shipping_fee_1) as shipping_fees,
-   SUM(logcost) as logcost,
-   COUNT(products_id) as qty_product_sold,
+   ROUND(SUM(margin),1) as margin,
+   ROUND(COUNT(orders_id),1) AS tot_number_of_transactions,
+   ROUND(SUM(revenue),1) AS tot_revenue,
+   ROUND(AVG(revenue),1) AS avg_basket,
+   ROUND(SUM(operational_margin),1) as operational_margin,
+   ROUND(SUM(purchase_cost),1) as purchase_cost,
+   ROUND(SUM(shipping_fee+shipping_fee_1),1) as shipping_fees,
+   ROUND(SUM(logcost),1) as logcost,
+   ROUND(COUNT(products_id),1) as qty_product_sold,
 FROM {{ ref('int_orders_operational') }}
    GROUP BY date_date
 
