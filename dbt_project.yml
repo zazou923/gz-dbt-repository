@@ -38,9 +38,14 @@ clean-targets:         # directories to be removed by `dbt clean`
  # dbt_project.yml
 
 models:
-  mart:
-    +materialized: view
-  intermediate:
-    +materialized: view
-  staging:
-    +materialized: table
+  my_new_project:
+    # Applies to all files under models/example/
+    mart:
+      +materialized: table
+      finance: 
+        +schema: finance
+
+    intermediate:
+      +materialized: view
+    staging:
+      +materialized: view
