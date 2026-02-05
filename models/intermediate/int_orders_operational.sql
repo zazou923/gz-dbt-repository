@@ -9,14 +9,14 @@ SELECT
       date_date,
       orders_id,
       shipping_fee,
-      shipping_fee_1,
       logcost,
       CAST (ship_cost as FLOAT64) as ship_cost,
       revenue,
       quantity,
       purchase_cost,
       margin,
-      products_id,
-    ROUND((margin + shipping_fee + shipping_fee_1 - logcost - ship_cost),1) AS operational_margin
+      nb_product,
+      ROUND((margin + shipping_fee - logcost - ship_cost),1) AS operational_margin
 FROM orders_ship
     ORDER BY orders_id DESC
+
