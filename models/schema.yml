@@ -28,7 +28,7 @@ sources:
               - not_null
 
 models:
-  - name: stg_data__sales
+  - name: sales
     tests:
       - unique:
           column_name: "(products_id||'-'||orders_id)"
