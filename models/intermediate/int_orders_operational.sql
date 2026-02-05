@@ -16,6 +16,7 @@ SELECT
       quantity,
       purchase_cost,
       margin,
+      products_id,
     ROUND((margin + shipping_fee + shipping_fee_1 - logcost - ship_cost),1) AS operational_margin
 FROM orders_ship
     ORDER BY orders_id DESC
