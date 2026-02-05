@@ -1,5 +1,3 @@
-{{config (materialized='table')}}
-
 SELECT
    date_date,
    COUNT(orders_id) AS tot_number_of_transactions,
