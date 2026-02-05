@@ -4,6 +4,7 @@ SELECT
     date_date,
     orders_id,
     quantity,
+    revenue,
     quantity * purchase_price AS purchase_cost,
     revenue - (quantity * purchase_price) AS margin
 FROM {{ ref('stg_data__product') }}
