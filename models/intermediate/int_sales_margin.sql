@@ -1,3 +1,5 @@
+WITH sales_margin AS ( 
+    
 SELECT
     products_id,
     purchase_price,
@@ -6,8 +8,13 @@ SELECT
     quantity,
     revenue,
     quantity * purchase_price AS purchase_cost,
-    revenue - (quantity * purchase_price) AS margin
+    revenue - (quantity * purchase_price) AS margin,
 FROM {{ ref('stg_data__product') }}
 LEFT JOIN {{ ref ('stg_data__sales') }}
 USING (products_id)
 ORDER BY date_date
+) 
+
+SELECT *,
+{{ margin_percent('revenue','purchase_cost') }} as margin_percent
+FROM sales_margin
